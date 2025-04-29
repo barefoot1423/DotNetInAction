@@ -1,9 +1,7 @@
 ﻿using Chapter2;
+using CommandLine;
 
-if (args.Length == 0)
-{
-    Console.WriteLine("Usage: HelloDotnet <text>");
-    Environment.Exit(1);
-}
-
-AsciiArt.Write(args[0]);
+Parser.Default.ParseArguments<Options>(args)
+    .WithParsed<Options>(AsciiArt.Write)
+    .WithNotParsed( _ =>
+        WriteLine("Usage: HelloDotnet <text> --font big"));

@@ -3,9 +3,9 @@ namespace Chapter2;
 
 public static class AsciiArt
 {
-    public static void Write(string text)
+    public static void Write(Options options)
     {
-        Console.WriteLine(FiggleFonts.Standard.Render(text));
-        Console.WriteLine("Brought to you by " + typeof(AsciiArt).FullName);
+        WriteLine(FiggleFonts.Standard.Render(options.Text));
+        WriteLine("Brought to you by " + typeof(AsciiArt).FullName);
     }
 }
