@@ -12,4 +12,4 @@ public record Options
         get => _text;
         set => _text = value;
     }
-};
+}
